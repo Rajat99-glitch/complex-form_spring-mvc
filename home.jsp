@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -23,8 +24,18 @@
 			<div class="card">
 				<div class="card-body">
 					<h3 class="text-center">Complex Form</h3>
-					<form action="handleform" method = "POST">
+					<form action="handleform" method="POST">
 						<div class="form-group">
+
+
+							<div class="alert alert-danger" role="alert">
+							
+							
+								<form:errors path="entity.*" />
+							
+							</div>
+
+
 							<label for="exampleInputEmail1"> Your Name</label> <input
 								name="name" type="text" class="form-control"
 								id="exampleInputEmail1" aria-describeby="emailHelp"
@@ -43,9 +54,8 @@
 								placeholder="Date Of Birth(dd/mm/yyyy)">
 
 							<div class="form-group">
-								<label for="exampleFormControlSelect2">Select Courses</label> 
-								<select multiple class="form-control"
-									name="multiple">
+								<label for="exampleFormControlSelect2">Select Courses</label> <select
+									multiple class="form-control" name="multiple">
 									<option>Java</option>
 									<option>Spring</option>
 									<option>JDBC</option>
@@ -75,20 +85,20 @@
 
 							</select>
 						</div>
-							<div class="card">
-								<p>Your Address</p>
-								<div class="form-group">
-									<input type="text" class="form-control"
-										placeholder="Enter Street"  name="address.street"/>
+						<div class="card">
+							<p>Your Address</p>
+							<div class="form-group">
+								<input type="text" class="form-control"
+									placeholder="Enter Street" name="address.street" />
 
-								</div>
-								<div class="form-group">
-									<input type="text" class="form-control"
-										placeholder="Enter City" name="address.city" />
-								</div>
 							</div>
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="Enter City"
+									name="address.city" />
+							</div>
+						</div>
 
-						
+
 
 						<div class="container text-center">
 							<button type="submit" class="btn btn-primary">Submit</button>
